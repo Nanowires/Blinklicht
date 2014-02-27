@@ -1,1 +1,3 @@
 Java Projekte für den Raspberry Pi.
+
+Blinklicht_einfach.java ist ein einfaches Programm, womit der Pin#1 (siehe p1header.png) alle 5 Sekunden seinen Zustand wechselt.
