@@ -20,7 +20,7 @@ public class Blinklicht_mit_Schalter {
         
         // Pin #1 als Ausgang definieren
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
-        // Pin #4 als Eingang definieren
+        // Pin #4 als Eingang definieren mit Pull-Down Widerstand
         final GpioPinDigitalInput input = gpio.provisionDigitalInputPin(RaspiPin.GPIO_4, PinPullResistance.PULL_DOWN);
         
         status=false;
@@ -29,7 +29,7 @@ public class Blinklicht_mit_Schalter {
 		input.addListener(new GpioPinListenerDigital() {
 			@Override
 			public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-				System.out.println(event.getPin() + " = " + event.getState());
+				//System.out.println(event.getPin() + " = " + event.getState());
 				if (input.getState() == PinState.HIGH){
 				    status=!status;
 					if (status==true) {
@@ -38,14 +38,6 @@ public class Blinklicht_mit_Schalter {
 						System.out.println("aus");//Schreibe "aus", wenn keine Spannung anliegt
 					}
 				}
-			}
-		});
-		
-		input.addTrigger(new GpioSetStateTrigger(PinState.HIGH, pin, PinState.LOW));
-		input.addListener(new GpioPinListenerDigital() {
-			@Override
-			public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-				
 			}
 		});
         
