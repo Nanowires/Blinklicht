@@ -30,13 +30,11 @@ public class Blinklicht_mit_Schalter {
 			@Override
 			public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
 				//System.out.println(event.getPin() + " = " + event.getState());
-				if (input.getState() == PinState.HIGH){
-				    status=!status;
-					if (status==true) {
-						System.out.println("an"); //Schreibe "an", wenn Spannung anliegt
-					} else {
-						System.out.println("aus");//Schreibe "aus", wenn keine Spannung anliegt
-					}
+				status=!status;
+				if (status==true) {
+					System.out.println("an"); //Schreibe "an", wenn Spannung anliegt
+				} else {
+					System.out.println("aus");//Schreibe "aus", wenn keine Spannung anliegt
 				}
 			}
 		});
@@ -59,6 +57,7 @@ public class Blinklicht_mit_Schalter {
 	          Thread.sleep(500);
 	          */
 		}
+	Thred.sleep(500);
         }
   
     }
