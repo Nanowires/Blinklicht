@@ -43,20 +43,22 @@ public class Blinklicht_mit_Schalter {
         
         Thread.sleep(500);
         
-        while(status==false) {
-        
-          // Pin #1 deaktivieren
-          pin.low();
-          Thread.sleep(500);
-          
-          // Pin #1 wieder aktivieren
-          pin.high();
-          Thread.sleep(500);
-          /*
-          Alternative wäre:
-          pin.pulse(500,true);
-          Thread.sleep(500);
-          */
+        while(true) {
+	        while(status==false) {
+	        
+	          // Pin #1 deaktivieren
+	          pin.low();
+	          Thread.sleep(500);
+	          
+	          // Pin #1 wieder aktivieren
+	          pin.high();
+	          Thread.sleep(500);
+	          /*
+	          Alternative wäre:
+	          pin.pulse(500,true);
+	          Thread.sleep(500);
+	          */
+		}
         }
   
     }
