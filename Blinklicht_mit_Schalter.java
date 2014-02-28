@@ -21,7 +21,7 @@ public class Blinklicht_mit_Schalter {
         // Pin #1 als Ausgang definieren
         final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
         // Pin #4 als Eingang definieren mit Pull-Down Widerstand
-        final GpioPinDigitalInput input = gpio.provisionDigitalInputPin(RaspiPin.GPIO_4, PinPullResistance.PULL_DOWN);
+        final GpioPinDigitalInput input = gpio.provisionDigitalInputPin(RaspiPin.GPIO_04, PinPullResistance.PULL_DOWN);
         
         status=false;
         
