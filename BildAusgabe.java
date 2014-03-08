@@ -66,7 +66,7 @@ public class BildAusgabe extends javax.swing.JFrame {
 			{
 				jBAuswahl = new JButton();
 				getContentPane().add(jBAuswahl);
-				jBAuswahl.setText("Bild ausw√§hlen");
+				jBAuswahl.setText("Bild ausw‰hlen");
 				jBAuswahl.setBounds(244, 12, 129, 23);
 				jBAuswahl.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
@@ -130,7 +130,7 @@ public class BildAusgabe extends javax.swing.JFrame {
 	
 	private void jBDarstellenActionPerformed(ActionEvent evt) {
 		try {
-			Process p = Runtime.getRuntime().exec("/home/pi/Skripte/BildAusgabe.sh " + jTFOrdner.getText());
+			Process p = Runtime.getRuntime().exec("/home/pi/Skripte/BildAusgabe.sh " + jTFOrdner.getText()); //Pfad des Skripts
 			p.waitFor();
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
